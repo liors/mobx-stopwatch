@@ -1,33 +1,6 @@
 import {observable, computed, action} from 'mobx';
 import {v4} from 'node-uuid';
 import format from 'format-number-with-string';
-/*
-const Timer = observable({    
-    init: function (totalMilliSeconds) {
-        this.milliseconds = totalMilliSeconds || 0;
-        this.savedMilliseconds = 0;
-        this.id = v4();
-    },
-    saveTime: action(function () {
-        this.savedMilliseconds += this.milliseconds;
-        this.milliseconds = 0;
-    }),
-    reset: action(function () {
-        this.milliseconds = this.savedMilliseconds = 0;
-    }),
-    totalMilliSeconds: computed(function () {
-        return this.milliseconds + this.savedMilliseconds;
-    }),
-    display: computed(function () {
-        const tenMilliSeconds = parseInt(this.totalMilliSeconds / 10, 10);
-        const seconds = parseInt(tenMilliSeconds / 100, 10);
-        const minutes = parseInt(seconds / 60, 10);
-        return `${minutes} : ${format(seconds % 60, '00')} :  ${format(tenMilliSeconds % 100, '00')}`;
-    })
-});
-
-export default Timer;
-*/
 
 export default class Timer {
   @observable milliseconds;
