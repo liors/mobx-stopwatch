@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Main from './main';
+import TimerStore from './TimerStore';
 
+const timerStore = new TimerStore();
 
 ReactDOM.render(
-  <Main />,
+  <Main timerStore={timerStore} />,
 document.getElementById('app')
 );

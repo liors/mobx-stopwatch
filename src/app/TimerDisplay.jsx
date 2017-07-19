@@ -1,4 +1,5 @@
 import React from 'react'
+import {observer} from 'mobx-react';
 
 const DisplayStyle = {
     background: 'white',
@@ -11,12 +12,14 @@ const DisplayStyle = {
     justifyContent: 'center'
 };
 
-const TimerAction = () => {
-    return (
-        <div style={DisplayStyle}>
-            0 : 00 : 00
-        </div>
-    )
+@observer class TimerAction extends React.Component {
+    render () {
+        return (
+            <div style={DisplayStyle}>
+                {this.props.timerStore.mainDisplay}
+            </div>
+        )
+    }
 }
 
 export default TimerAction
